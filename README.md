@@ -1,4 +1,5 @@
 # JavaScript-Wk1
+<<<<<<< Updated upstream
 // Arrays!
 
 // As with Objects, we're trying to get you enough repetition to the point where this is instinctive. If any of it starts to feel repetitive, that's awesome! To facilitate this, keep writing new code for each exercise; don't copy and paste previous code. Practicing these keystrokes is super valuable. 
@@ -145,3 +146,6 @@ mysticalAnimal2.mysticalAnimal[2] = "open position available!";
     // Arrays are 0-indexed. That is, the first item you add into an array is stored at the 0th position, arr[0]. 
     // Values in arrays must be accessed using bracket notation
 // We've gone over how to access individual values from arrays and objects, but you're probably curious if there's an easier way to access all the values in an array or object. We've mentioned the two different types of loops we have available for arrays and objects, and tomorrow we're going to practice them in more depth! Loops are great ways of accessing all the values in an array or object efficiently. 
+=======
+This is the JavaScript I worked on
+>>>>>>> Stashed changes
