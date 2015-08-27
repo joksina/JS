@@ -1,4 +1,4 @@
-// Let's do a quick review of functions. 
+ // Let's do a quick review of functions. 
 // Remember that a function is just a block of code that we've created but not invoked yet. 
 // An analogy for this is a recipe. Writing a function is like writing a recipe. Invoking a function is like actually baking that recipe. Another way of thinking of this is that the function is a set of instructions, but we haven't yet carried out those instructions. 
 

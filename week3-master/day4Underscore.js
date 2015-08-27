@@ -40,14 +40,15 @@ var testArr = [100,200,300,400,500];
     Oak: 'Oakland',
     SJ: 'San Jose'
   };
-  var nametoAdd = _.map(shortNameArr,function(name){
-if (shortNameArr[i] = cityMapper[i]){
-return cityMapper[i];
-console.log(cityMapper[i]);
-}
-}); 
-  console.log(cityMapper);
-  console.log(shortNameArr);
+
+  var nm = _.map(shortNameArr, function(value1){
+    //var mapp = [];
+   return _.each(cityMapper, function(value2, key){
+      if(value1 === key){
+       console.log(value2);
+      }
+    })
+  })
   // Let's take our shortNameArr and return an array that has the longform names of each city. So we'd expect to see ['San Francisco','New York City','Chicago','Oakland','San Jose']; 
   // Again, console.log the results of map, and console.log shortNameArr to make sure it hasn't changed. 
   // If you're not getting the results you expect, check back with the three rules of what our callback function must do. 
@@ -56,18 +57,18 @@ console.log(cityMapper[i]);
   var colorArray = ['red','purple','orange','yellow','green','purple'];
   // let's take in colorArray, and return an array of objects that have a color property set equal to each item in colorArray. 
   // Expected Results: [{color: 'red'}, {color:'orange'}, {color:'purple]'}, {color:'yellow'}, {color:'green'}, {color:'purple'}]
-//   var colorAdd = function (arr) {
-//     var object = {};
-//     object.color = arr;
-//     return object;
-// };
+  var colorAdd = function (arr) {
+    var object = {};
+    object.color = arr;
+    return object;
+};
 
-// var addColorToArray = _.map(colorArray,colorAdd);
-// console.log(addColorToArray);
+var addColorToArray = _.map(colorArray,colorAdd);
+console.log(addColorToArray);
 
-// var colorAdd = function (arr) {
-// return "color:" + arr;
-// };
+var colorAdd = function (arr) {
+return "color:" + arr;
+};
 
 // var addColorToArray = ._map(colorArray,colorAdd);
 

@@ -1,14 +1,3 @@
-var number = [1, 2, 3, 4, 5];
-
-var object = {
-	name: "Ajoke Salau",
-  email: "jksalaudeen@yahoo.com",
-  phoneNumber: 4435258006
-  };
-  
-  var logger = function(val, index, arr){
-  	console.log(val, index, arr);
-  };
 
 var each = function(list, callback){
 	if(Array.isArray(list)) {
@@ -52,16 +41,6 @@ function reduce(list, accum, current){
   });
   return current;
 }
-
-var callOnce = function(f) {
-    var called = false;
-    return function() {
-        if (!called) {
-            f();
-        }
-        called = true;
-    };
-};
 
 
 
@@ -141,3 +120,26 @@ function shuffle(array) {
   });
 return array;
 }
+
+//call once
+function onlyOnce(func, context) {
+  var result;
+  return function(){
+    if(func) {
+      result = func.apply(context || this, arguments);
+      func = null;
+
+    }
+    return result;
+  };
+}
+// another version of call once
+var callOnce = function(f) {
+    var called = false;
+    return function() {
+        if (!called) {
+            f();
+        }
+        called = true;
+    };
+};

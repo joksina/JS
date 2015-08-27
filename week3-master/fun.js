@@ -171,3 +171,12 @@ function once(func){
 		called = true;
 	}
 }
+
+function g(h, m) {
+    var mPos = m * 6;
+    var hPos = h * 5 * 6 + (m * 0.5);
+    log("Minute hand position: " + mPos + "&deg; Hour hand position: " + hPos + "&deg;");
+    if (mPos === hPos) return 0;
+    var diff = Math.abs(mPos - hPos);
+    return Math.min(360 - diff, diff);
+}
