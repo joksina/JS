@@ -180,3 +180,16 @@ function g(h, m) {
     var diff = Math.abs(mPos - hPos);
     return Math.min(360 - diff, diff);
 }
+
+function reduce(coll, func, curr){
+	var accum = curr === undefined;
+	each(coll, function(value){
+		if(accum){
+			curr = value;
+			accum = false;
+		} else {
+			curr = func(curr, value);
+		}
+	})
+	return curr;
+}
