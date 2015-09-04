@@ -193,3 +193,123 @@ function reduce(coll, func, curr){
 	})
 	return curr;
 }
+
+function count(str){
+	var coll = str.split(" ");
+	return coll.reduce(function(accum, curr){
+		if(accum.length > curr.length){
+		return accum;
+
+		}else{
+		return curr;
+		}
+	}, 0)
+}
+var isPalindrome = function (str) {
+	return str === str.split('').reverse().join('');
+};
+
+
+function count(str){
+	var coll = str.split(" ");
+	return coll.reduce(function(accum, curr){
+		curr = isPalindrome(curr);
+		if(accum.length > curr.length){
+		return accum;
+
+		}else{
+		return curr;
+		}
+	}, 0)
+}
+
+
+
+
+
+
+
+
+function is_Palindrome(str1) {
+var rev = str1.split("").reverse().join("");
+return str1 == rev;
+}
+
+function longest_palindrome(str1){
+
+var max_length = 0,
+maxp = '';
+
+for(var i=0; i < str1.length; i++) 
+{
+var subs = str1.substr(i, str1.length);
+
+for(var j=subs.length; j>=0; j--) 
+{
+var sub_subs_str = subs.substr(0, j);
+if (sub_subs_str.length <= 1)
+continue;
+
+if (is_Palindrome(sub_subs_str))
+{
+if (sub_subs_str.length > max_length) 
+{
+max_length = sub_subs_str.length;
+maxp = sub_subs_str;
+}
+}
+}
+}
+
+return maxp;
+}
+console.log(longest_palindrome("abracadabra"));
+
+console.log(longest_palindrome("HYTBCABADEFGHABCDEDCBAGHTFYW12345678987654321ZWETYGDE"));
+
+function longestPalindromeIn(input) {
+    var palArr = input.split('');
+    return palArr.map(function(e,i){ return longestPalindromeAt(i);}).reduce(function(p,c){ return p.length>=c.length ? p: c;},'');
+
+    function fromPalArr(index,length) {
+       return palArr.slice(index-Math.floor(length/2),index+Math.ceil(length/2)).join('');
+    }
+
+    function palindromeAt(index, length){
+       if (Math.min(index, palArr.length-index) - Math.floor(length/2) >= 0) {
+          if (length %2 == 0) {
+             for (var i = 1; i <= length/2; i++) {
+                if (palArr[index-i] != palArr[index+i-1]){
+                   return false;
+                }
+             }
+             return true;
+          }
+          if (length %2 == 1) {
+             for (var i = 1; i <= length/2; i++) {
+                if (palArr[index-i] != palArr[index+i]){
+                   return false;
+                }
+             }
+             return true;
+          }
+       }
+       return false;
+    }
+
+    function longestPalindromeAt(index) {
+       var i = 1;
+       if (palindromeAt(index, 2)) {
+          i = 2;
+       } else if (palindromeAt(index,3)) {
+          i = 1;
+       } else {
+          return fromPalArr(index,1);
+       }
+       while(palindromeAt(index,i)) {
+         i += 2;
+       }
+       return fromPalArr(index,i-2);
+    }
+}
+
