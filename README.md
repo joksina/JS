@@ -1,1 +1,1 @@
-# JavaScript-Wk1
+This is the javascript problems I worked on at TGA.

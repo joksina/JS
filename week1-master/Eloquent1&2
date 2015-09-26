@@ -1,0 +1,45 @@
+for (var i = "#"; i.length < 8; i += "#") {
+	console.log(i);
+}
+
+// Your code here.
+for (var i = 1; i < 101; i++) {
+  if ((i % 3 === 0) && (i%5 === 0)) {
+    console.log("FizzBuzz");
+  } else if (i % 5 === 0) {
+    console.log("Buzz");
+  } else if (i % 3 === 0) {
+    console.log("Fizz")
+  } else {
+    console.log(i);
+  }
+}
+
+
+// Your code here.
+var size = 8;
+var chess = "";
+for(var i = 0; i < size; i++) {
+  for (var y = 0; y < size; y++) {
+    if ((i+y) % 2 == 0) {
+      console.log(chess += " ");
+    } else {
+      console.log(chess += "#");
+                 }
+  } console.log(chess += "\n");
+}
+console.log(chess);
+
+
+var size = 8;
+var chess = "";
+for(var i = 1; i <= size; i++) {
+  for (var y = 1; y <= size; y++) {
+    if ((i+y) % 2 == 0) {
+      chess += " ";
+    } else {
+     chess += "#";
+    }         
+  } chess += "\n";
+}
+console.log(chess);
