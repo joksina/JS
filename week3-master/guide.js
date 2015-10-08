@@ -143,3 +143,25 @@ var callOnce = function(f) {
         called = true;
     };
 };
+
+var isMapped = function(obj,func) {
+  for (var k in obj) {
+    if (obj[k] !== func(k)) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+myObj = {
+    2: 4,
+    4: 16,
+  6: 36,
+    8: 64   
+ }  
+Object {2: 4, 4: 16, 6: 36, 8: 64}
+
+isMapped(myObj,function(val) {
+    return val * val;
+})
